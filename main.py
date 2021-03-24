@@ -1,35 +1,16 @@
-import sys
-from PyQt5.QtWidgets import *
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-class SoftwareUI(QWidget):
-
-    def __init__(self):
-        super().__init__()
-        self.init_ui()
-
-    def init_ui(self):
-        self.resize(400, 150)
-        self.setWindowTitle('Simplex Method')
-        self.set_center()
-        self.show()
-
-    def set_center(self):
-        qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
-
-    def coefficient_box(self):
-        new_variable = QLineEdit(self)
-
-    # def coefficient_changed(self, text):
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = SoftwareUI()
-    sys.exit(app.exec_())
+    print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
