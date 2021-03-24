@@ -3,12 +3,12 @@ from type import Type
 
 class Equation:
 
-    def __init__(self, coefficients: dict):
+    def __init__(self, _equation: dict):
         self.variables = dict()
         self.rhs = 0
         self.type_can_changed = True
         is_rhs = False
-        for i, v in coefficients.items():
+        for i, v in _equation.items():
             if is_rhs:
                 self.rhs = v
             else:
