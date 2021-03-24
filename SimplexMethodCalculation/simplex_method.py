@@ -1,14 +1,27 @@
 from Equation.equation import Equation
+from Equation.condition_eq import ConditionEq
+from Equation.object_eq import ObjectEq
 from phase1 import Phase1
 from phase2 import Phase2
 
 
 class SimplexMethod:
 
-    def __init__(self):
+    def __init__(self, _problem):
         self.equations = []
+        self.problem = _problem
+
+    def set_problem(self):
+        is_object = True
+        for eq in self.problem:
+            if is_object:
+                self.equations.append(ObjectEq(eq))
+                is_object = False
+            else:
+                self.equations.append(ConditionEq(eq))
 
     def calculate(self):
+        self.set_problem()
         if self.check_phase1():
             ph1 = Phase1(self.equations)
             ph1.calculate()

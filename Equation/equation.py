@@ -1,12 +1,24 @@
+from type import Type
+
+
 class Equation:
 
-    def __init__(self):
+    def __init__(self, coefficients: dict):
         self.variables = dict()
         self.rhs = 0
         self.type_can_changed = True
+        is_rhs = False
+        for i, v in coefficients.items():
+            if is_rhs:
+                self.rhs = v
+            else:
+                self.variables[i] = v
 
-    def add_variable(self):
-        self.variables[len(self.variables)] = 0
+    def add_variable(self, variable_index):
+        if self.type == Type.LEQ:
+            self.variables[variable_index] = 1
+        else:
+            self.variables[variable_index] = -1
 
     def set_type(self, _type):
         self.type = _type
@@ -19,3 +31,6 @@ class Equation:
 
     def check_phase1(self):
         return False
+
+    def get_len(self):
+        return len(self.variables)
