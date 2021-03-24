@@ -61,7 +61,7 @@ class Phase1:
     def find_variable(self):
         variable = -1
         for i, v in self.w_equation.variables.items():
-            if i < 0 and (variable == -1 or self.w_equation.variables[variable] > v):
+            if v < 0 and (variable == -1 or self.w_equation.variables[variable] > v):
                 variable = i
         return variable
 
