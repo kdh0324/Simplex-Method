@@ -1,0 +1,25 @@
+from Equation.equation import Equation
+from phase1 import Phase1
+from phase2 import Phase2
+
+
+class SimplexMethod:
+
+    def __init__(self):
+        self.equations = []
+
+    def calculate(self):
+        if self.check_phase1():
+            ph1 = Phase1(self.equations)
+            ph1.calculate()
+        ph2 = Phase2(self.equations)
+        ph2.calculate()
+
+    def add_equation(self, eq: Equation):
+        self.equations.append(eq)
+
+    def check_phase1(self):
+        for eq in self.equations:
+            if eq.check_phase1:
+                return True
+        return False
