@@ -24,7 +24,7 @@ class SimplexMethod:
         self.set_problem()
         if self.check_phase1():
             ph1 = Phase1(self.equations)
-            ph1.calculate()
+            self.equations = ph1.calculate()
         ph2 = Phase2(self.equations)
         ph2.calculate()
 
