@@ -16,3 +16,6 @@ class Equation:
 
     def set_rhs(self, _rhs):
         self.rhs = _rhs
+
+    def check_phase1(self):
+        return False
