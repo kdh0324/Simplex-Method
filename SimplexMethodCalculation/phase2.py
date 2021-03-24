@@ -1,11 +1,8 @@
-from collections import defaultdict
-
 from Equation.object_eq import ObjectEq
-from Equation.type import Type
 from util import *
 
 
-class Phase1:
+class Phase2:
 
     def __init__(self, _equations: list):
         self.equations = _equations

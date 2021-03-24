@@ -1,5 +1,5 @@
-from Equation.equation import Equation
 from Equation.condition_eq import ConditionEq
+from Equation.equation import Equation
 from Equation.object_eq import ObjectEq
 from phase1 import Phase1
 from phase2 import Phase2

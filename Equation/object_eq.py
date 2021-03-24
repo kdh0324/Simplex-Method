@@ -1,5 +1,5 @@
-from type import Type
 from equation import Equation
+from type import Type
 
 
 class ObjectEq(Equation):
